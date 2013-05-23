@@ -48,3 +48,5 @@ define('VIE_PATH', APP_PATH.'view'.			DIRECTORY_SEPARATOR);
 require_once APP_PATH.'bootstrap.php';
 $bootstrap =new bootstrap() ;
 $bootstrap->dispatch();
+
+//end
