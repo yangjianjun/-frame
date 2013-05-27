@@ -14,10 +14,8 @@ class Controller_User extends Controller
 	public function Action_index(){
 		
 		$user = new Model_User();
-		
-		
 		$this->view->data = $user->fetchAll();
-		
-	
 	}
+	
+
 }

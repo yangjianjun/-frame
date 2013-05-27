@@ -1,25 +1,39 @@
 <?php
 class Performance
 {
-	const BEGIN =1;
-	const END	=0 ;
+	const BEGIN 	='begin';
+	const END		='end' ;
 	
-	public static $sql=array();
-	//检测sql执行性能
-	public	static function sql($sql=null,$status=self::BEGIN){
-		if (empty($sql)){
+	const TIME 		= 'time';
+	const MEMORY	= 'memory' ;
+	// Whether to open Performance Analysis
+	
+	public static $data 	=array();
+	//sql  Performance monitor (time and memory)
+	public	static function monitor($sql=null,$status=null){
+		//sure openperformance
+		if (!Frame::getInstance()->config['openperformance']){
 			return false ;
 		}
-		if ($status == self::BEGIN ){
-			self::$sql[$sql][self::BEGIN] = self::microtime_float();
-		}else {
-			self::$sql[$sql][self::END]   = self::microtime_float() ;
+		//Single sql execution time, memory
+		if (!empty($sql)){
+			//time
+			self::$data[$sql][self::TIME][$status] 	 = self::timeMs();
+			//memory
+			self::$data[$sql][self::MEMORY][$status] = self::memory();
+		}else { //Total Page execution time, memory
+			//time
+			self::$data['page'][self::TIME][$status] 		 = self::timeMs();
+			//memory
+			self::$data['page'][self::MEMORY][$status] 		 = self::memory();
 		}
-		
 	}
-	
-	public	static function microtime_float(){
+	public static function memory(){
+		$size = memory_get_usage();
+		return round($size/1024,2);
+	}
+	public	static function timeMs(){
 	    list($usec, $sec) = explode(" ", microtime());
-	    return $sec*1000+$usec ;
+	    return $ms = $sec*1000+((int)($usec*1000)) ;
 	}
 } 

@@ -232,3 +232,21 @@ Unknown error type: [2] Missing argument 1 for View::instance(), called in D:\we
   on line 92 in file D:\webserver\www.framework.com\library\execution.php , PHP 5.3.6 (WINNT)<br />
 <b> NOTICE</b> [8] Undefined index: select * from  user <br />
   on line 92 in file D:\webserver\www.framework.com\library\execution.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Use of undefined constant microtime - assumed 'microtime'<br />
+  on line 22 in file D:\webserver\frame\library\performance.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Use of undefined constant microtime - assumed 'microtime'<br />
+  on line 22 in file D:\webserver\frame\library\performance.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Use of undefined constant microtime - assumed 'microtime'<br />
+  on line 22 in file D:\webserver\frame\library\performance.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: end<br />
+  on line 143 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: begin<br />
+  on line 143 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: end<br />
+  on line 143 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: begin<br />
+  on line 143 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: end<br />
+  on line 143 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: begin<br />
+  on line 143 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />

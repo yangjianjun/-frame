@@ -5,6 +5,7 @@ class Frame
 	public  $request 	= 'request';
 	public  $router		= 'router';
 	public  $response	= 'response';
+	
 	public  $config		= null;
     public  $_baseUrl 	= null;
 
@@ -46,7 +47,8 @@ class Frame
     
     
 	protected function executionBefore(){
-	
+		//is open Performance
+		Performance::monitor(null,Performance::BEGIN);
 	}
 	/**
 	 * Enter description here ...
@@ -127,14 +129,25 @@ class Frame
 	}
 	protected function executionAfter(){
 		//Performance Analysis
-		print_r(Performance::$sql);
-		if (count(Performance::$sql)>0){
-			echo "<table border=1>";
-			
-			foreach (Performance::$sql as $sql=>$v) {
-				echo "<tr><td>".$sql."</td><td>".($v[Performance::END]-$v[Performance::END])."</td></tr>";;
+		Performance::monitor(null,Performance::END);
+		
+		$performanceStr = "";
+		//sql time memery
+		if ($this->config['openperformance'] && count(Performance::$data)>0){
+			$performanceStr.= "<table style='text-align:center;width:100%;border :1px solid #666;'>";
+			$performanceStr.= "<tr><td>sql/page</td><td>time(ms)</td><td>memory(kb)</td></tr>";
+			foreach (Performance::$data as $k=>$v) {
+				$performanceStr.= "<tr>
+					<td>".$k."</td>
+					<td>".($v[Performance::TIME][Performance::END]-$v[Performance::TIME][Performance::BEGIN])."</td>
+					<td>".($v[Performance::MEMORY][Performance::END]-$v[Performance::MEMORY][Performance::BEGIN])."</td>
+				</tr>";;
 			}
-			echo "</table>";
+			$performanceStr.= "</table>";
+			
+			Frame::getInstance()->response->body.= $performanceStr ;
 		}
+		
+		
 	}
 }

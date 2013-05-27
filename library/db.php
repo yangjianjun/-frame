@@ -48,12 +48,12 @@ class db
      */
     public function query($sql)
     {
-    	Performance::sql($sql,Performance::BEGIN);
+    	Performance::monitor($sql,Performance::BEGIN);
         $this->db->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
         $rs = $this->db->query($sql);
         $rs->setFetchMode($this->fetch_mode);
         $data = $rs->fetchAll();
-        Performance::sql($sql,Performance::END);
+        Performance::monitor($sql,Performance::END);
         return $data;
     }
     
@@ -65,9 +65,9 @@ class db
      */
     public function exec($sql)
     {
-    	Performance::sql($sql,Performance::BEGIN);
+    	Performance::monitor($sql,Performance::BEGIN);
         $data = $this->db->exec($sql);
-        Performance::sql($sql,Performance::END);
+        Performance::monitor($sql,Performance::END);
     }
    
     /**
@@ -138,7 +138,7 @@ class db
 			return false ;
 		}
 		//生成sql
-		$sql="select {$fnName}({$fieldName}) as {$fnName} from  {$tName} ";
+		$sql="select {$fnName}({$fieldName}) as {$fnName} from  `{$tName}` ";
 		
 		//加where
 		if(!empty($where)){
@@ -156,7 +156,7 @@ class db
 			return false ;
 		}
 		//生成sql
-		$sql="select count(*) as count from  {$tName} ";
+		$sql="select count(*) as count from  `{$tName}` ";
 		
 		//加where
 		if(!empty($where)){
@@ -175,7 +175,7 @@ class db
 			return false ;
 		}
 		//生成sql语句
-		$sql = "insert into {$tName} (" ;
+		$sql = "insert into ``{$tName}`` (" ;
 		//加入字段名
 		$sql.= implode(',',array_keys($data)).')  values (';
 
@@ -194,7 +194,7 @@ class db
 			return false ;
 		}
 		//生成sql
-		$sql="update {$tName} set " ;
+		$sql="update `{$tName}` set " ;
 		
 		//加set
 		foreach ($data as $k=>$v) {
@@ -221,7 +221,7 @@ class db
 			return false ;
 		}
 		//生成sql
-		$sql="select * from  {$tName} ";
+		$sql="select * from  `{$tName}` ";
 		
 		//加where
 		if(!empty($where)){
@@ -253,7 +253,7 @@ class db
 			return false ;
 		}
 		//生成sql
-		$sql="select * from  {$tName} ";
+		$sql="select * from  `{$tName}` ";
 		
 		//加where
 		if(!empty($where)){
@@ -275,7 +275,7 @@ class db
 			return false ;
 		}
 		//生成sql
-		$sql = "delete from {$tName} " ;
+		$sql = "delete from `{$tName}` " ;
 		//加where
 		if(!empty($where)){
 			$sql.=" where ".$where ;

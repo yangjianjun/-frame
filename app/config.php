@@ -6,7 +6,8 @@ return  array(
 	'controller'			=>'index',  	//默认控制器
 	'action'				=>'index',  	//默认控制器
 	'layout'				=>'layout',  	//默认布局
-	'db'=>array(					    //数据库链接设置
+	'openperformance'		=>true,  		//开启性能检测
+	'db'=>array(					    	//数据库链接设置
 		'host'				=>'localhost',  //数据库主机名或IP
 		'user'				=>'root',		//用户名
 		'password'			=>'123456',		//密码
