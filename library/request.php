@@ -1,6 +1,6 @@
 <?php
 /*
- * 基本数据提交类
+ * Basic data submission categories
  * */
 class Request {
 	
@@ -64,6 +64,13 @@ class Request {
      * @var array
      */
     protected $_aliases = array();
+    
+    
+    function __construct($config=array()){
+    	if (isset($config['baseUrl'])){
+    		$this->setBaseUrl($config['baseUrl']);
+    	}
+    }
     
     public function getQuery($key = null, $default = null)
     {
@@ -156,7 +163,7 @@ class Request {
      * $_SERVER['HTTP_X_REWRITE_URL'], or $_SERVER['ORIG_PATH_INFO'] + $_SERVER['QUERY_STRING'].
      *
      * @param string $requestUri
-     * @return Zend_Controller_Request_Http
+     * @return Request
      */
     public function setRequestUri($requestUri = null)
     {
@@ -206,7 +213,7 @@ class Request {
      *
      * @param  string|array $spec
      * @param  null|mixed $value
-     * @return Zend_Controller_Request_Http
+     * @return Request
      */
     public function setQuery($spec, $value = null)
     {
@@ -255,7 +262,7 @@ class Request {
      * ORIG_SCRIPT_NAME in its determination.
      *
      * @param mixed $baseUrl
-     * @return Zend_Controller_Request_Http
+     * @return Request
      */
     public function setBaseUrl($baseUrl = null)
     {
@@ -349,7 +356,7 @@ class Request {
      * Set the base path for the URL
      *
      * @param string|null $basePath
-     * @return Zend_Controller_Request_Http
+     * @return Request
      */
     public function setBasePath($basePath = null)
     {
@@ -406,7 +413,7 @@ class Request {
      *
      * @param mixed $key
      * @param mixed $value
-     * @return Zend_Controller_Request_Http
+     * @return Request
      */
     public function setParam($key, $value)
     {
@@ -450,7 +457,7 @@ class Request {
      * using the keys specified in the array.
      *
      * @param array $params
-     * @return Zend_Controller_Request_Http
+     * @return Request
      */
     public function setParams(array $params)
     {

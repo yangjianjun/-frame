@@ -293,4 +293,11 @@
 #1 D:\webserver\www.framework.com\library\execution.php(16): execution->_run(Array)
 #2 D:\webserver\www.framework.com\app\bootstrap.php(38): execution->run(Array)
 #3 D:\webserver\www.framework.com\index.php(50): bootstrap->dispatch()
+#4 {main}<br />code=404<br />File=D:\webserver\frame\library\frame.php<br />line=95<br />Message=load Action_test fail <br />TraceAsString=#0 D:\webserver\frame\library\frame.php(60): Frame->_run(Array)
+#1 D:\webserver\frame\app\bootstrap.php(31): Frame->run(Array)
+#2 D:\webserver\frame\index.php(50): bootstrap->dispatch()
+#3 {main}<br />code=0<br />File=D:\webserver\frame\library\core.php<br />line=188<br />Message=view file not exit<br />TraceAsString=#0 D:\webserver\frame\library\frame.php(116): View->render('test/test', false)
+#1 D:\webserver\frame\library\frame.php(60): Frame->_run(Array)
+#2 D:\webserver\frame\app\bootstrap.php(31): Frame->run(Array)
+#3 D:\webserver\frame\index.php(50): bootstrap->dispatch()
 #4 {main}

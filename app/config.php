@@ -1,30 +1,37 @@
 <?php
 /*
- * 网站全局配制文件
+ * Website Global configuration file
  * */
 return  array(
-	'controller'			=>'index',  	//默认控制器
-	'action'				=>'index',  	//默认控制器
-	'layout'				=>'layout',  	//默认布局
-	'openperformance'		=>true,  		//开启性能检测
-	'db'=>array(					    	//数据库链接设置
-		'host'				=>'localhost',  //数据库主机名或IP
-		'user'				=>'root',		//用户名
-		'password'			=>'123456',		//密码
-		'dbname'			=>'test',		//数据库名称
-		'charset'			=>'utf8',		//字符集
-		'conmode'			=>false			//true为长久连接模式，false为短暂连接模式
+	'controller'			=>'index',  				//Default controller
+	'action'				=>'index',  				//Default action
+	'layout'				=>'layout',  				//Default Layout
+	'openperformance'		=>true,  					//Open Performance Testing
+
+	'errorHandler'			=>'myErrorHandler',  		// error function
+	'exceptionHandler'		=>'myExceptionHandler',  	// exception function
+
+	'baseUrl'				=>'/public',  				// front base url
+
+
+	'db'=>array(					    				//Database Link Settings
+		'host'				=>'localhost',  			//Database host name or IP
+		'user'				=>'root',					//User name
+		'password'			=>'123456',					//Password
+		'dbname'			=>'test',					//DBName
+		'charset'			=>'utf8',					//charset
+		'conmode'			=>false						//true to the long connection mode, false for the short connection mode
 	),
 	'upload'=>array(
 		'direct'			=>'upload',
-		'size'				=>2097152    	//2M
+		'size'				=>2097152    				//2M
 	),
 	'page'=>array(
-		'psize'				=>10,			//每页显示的记录数
-		'pnum'				=>5				//页码偏移量
+		'psize'				=>10,						//The number of records per page
+		'pnum'				=>5							//Page Offset
 	),
 	'cache'=>array(
-		'driver'		   	=>"memcache",//apc //file
+		'driver'		   	=>"memcache",				//apc //file
 		'host'             	=> '192.168.1.62',
 		'port'             	=> 11211,
 		'persistent'       	=> FALSE,

@@ -102,6 +102,8 @@ class View {
 	 */
 	private $file = '';
 	
+	public $baseUrl= null;
+	
 	/**
 	 * 视图变量存放
 	 */
@@ -118,6 +120,7 @@ class View {
 	 * @param $file 视图文件名
 	 */
 	public function __construct($file=null){
+		$this->baseUrl= Frame::getInstance()->config['baseUrl'] ?Frame::getInstance()->config['baseUrl']:null;
 		$this->set_file($file);
 	}
 	

@@ -250,3 +250,15 @@ Unknown error type: [2] Missing argument 1 for View::instance(), called in D:\we
   on line 143 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
 <b> NOTICE</b> [8] Undefined index: begin<br />
   on line 143 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: myExceptionHandler<br />
+  on line 31 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] set_exception_handler() expects the argument (Array) to be a valid callback<br />
+  on line 31 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: myExceptionHandler<br />
+  on line 31 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] set_exception_handler() expects the argument (Array) to be a valid callback<br />
+  on line 31 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: myExceptionHandler<br />
+  on line 31 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] set_exception_handler() expects the argument (Array) to be a valid callback<br />
+  on line 31 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />

@@ -1,6 +1,6 @@
 <?php
 /*
- * 基本数据响应类
+ * Basic data response class
  * */
 class Response 
 {

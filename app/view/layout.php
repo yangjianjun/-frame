@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>layout</title>
-<link type="text/css" rel="stylesheet" href="/public/css/index.css" />
+<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl;?>/css/index.css" />
 </head>
 <body>
 <div>

@@ -24,11 +24,11 @@ class Frame
     	/*
 		 * set error function
 		 * */
-		set_error_handler(array('error', 'myErrorHandler'));
+		set_error_handler(array('error', $this->config['errorHandler']));
 		/*
 		 *  set exception function
 		 * */
-		set_exception_handler(array('error', 'myExceptionHandler'));
+		set_exception_handler(array('error', $this->config['exceptionHandler']));
     }
     /**
      * Singleton instance

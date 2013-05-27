@@ -11,13 +11,15 @@ class bootstrap
 		/*
 		 * frame load
 		 * */	
-		require_once LIB_PATH.'frame.php';	
+		require_once 		LIB_PATH.'frame.php';	
 		$frame 				= Frame::getInstance();
 		/*
 		 * request
 		 * */
-		$request 			= new Request();
+		$request 			= new Request($frame->config);
+		
 		$pathInfo		 	= $request->getPathInfo();
+		
 		$frame->request		= $request ;
 		/**
 		 * router
@@ -26,12 +28,12 @@ class bootstrap
 		$mappingArr 		= $router->mapping($pathInfo);
 		$frame->router		= $router ;
 		/*
-		 * run
+		 * frame run and return response
 		 * */
 		$response 			= $frame->run($mappingArr);
 		
 		/*
-		 * return html
+		 * response's body output return html
 		 */
 		$response->output();
 	}
