@@ -18,7 +18,7 @@ class bootstrap
 		 * */
 		$request 			= new Request($frame->config);
 		
-		$pathInfo		 	= $request->getPathInfo();
+		$pathInfo		 	= $request->getRequestUri();
 		
 		$frame->request		= $request ;
 		/**

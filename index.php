@@ -16,7 +16,8 @@ defined('ROOT') or define('ROOT', dirname(__FILE__).DIRECTORY_SEPARATOR);
  * controller  		Where the controller class file path(app/controller)
  * model     		Class file path where the application model(app/model)
  * view  			Template file path where(app/view)
- * config.php		Site preparation global file(app/config.php)
+ * config		    Site preparation config directly(app/config)
+ * 
  * bootstrap.php   	Website bootstrap class files(app/bootstrap.php)
  *  	
  * library   		Site library path to the folder where the

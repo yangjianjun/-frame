@@ -67,6 +67,7 @@ class Request {
     
     
     function __construct($config=array()){
+    	//baseUrl
     	if (isset($config['baseUrl'])){
     		$this->setBaseUrl($config['baseUrl']);
     	}
@@ -385,26 +386,6 @@ class Request {
         $this->_basePath = rtrim($basePath, '/');
         return $this;
     }
-
-
-
-    /**
-     * Returns everything between the BaseUrl and QueryString.
-     * This value is calculated instead of reading PATH_INFO
-     * directly from $_SERVER due to cross-platform differences.
-     *
-     * @return string
-     */
-    public function getPathInfo()
-    {
-    	if (isset($_SERVER['PATH_INFO'])){
-    		$pathInfo = $_SERVER['PATH_INFO'] ;
-		}else {
-			$pathInfo = null;
-		}
-		return $pathInfo ;
-    }
-
     /**
      * Set a userland parameter
      *

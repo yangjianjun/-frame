@@ -262,3 +262,229 @@ Unknown error type: [2] set_exception_handler() expects the argument (Array) to 
   on line 31 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
 Unknown error type: [2] set_exception_handler() expects the argument (Array) to be a valid callback<br />
   on line 31 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: PATH_INFO<br />
+  on line 399 in file D:\webserver\frame\library\request.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: PATH_INFO<br />
+  on line 399 in file D:\webserver\frame\library\request.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: PATH_INFO<br />
+  on line 399 in file D:\webserver\frame\library\request.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: PATH_INFO<br />
+  on line 399 in file D:\webserver\frame\library\request.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: PATH_INFO<br />
+  on line 399 in file D:\webserver\frame\library\request.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] Missing argument 2 for Controller_Test::Action_test()<br />
+  on line 8 in file D:\webserver\frame\app\controller\test.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: iid<br />
+  on line 9 in file D:\webserver\frame\app\controller\test.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] Missing argument 1 for Controller_Test::Action_test()<br />
+  on line 8 in file D:\webserver\frame\app\controller\test.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] Missing argument 2 for Controller_Test::Action_test()<br />
+  on line 8 in file D:\webserver\frame\app\controller\test.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: name<br />
+  on line 9 in file D:\webserver\frame\app\controller\test.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: iid<br />
+  on line 9 in file D:\webserver\frame\app\controller\test.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: name<br />
+  on line 9 in file D:\webserver\frame\app\controller\test.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: iid<br />
+  on line 9 in file D:\webserver\frame\app\controller\test.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] Missing argument 1 for Request::setQuery(), called in D:\webserver\frame\library\router.php on line 27 and defined<br />
+  on line 219 in file D:\webserver\frame\library\request.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: spec<br />
+  on line 221 in file D:\webserver\frame\library\request.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: params<br />
+  on line 111 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [4096] Argument 2 passed to ReflectionMethod::invokeArgs() must be an array, null given, called in D:\webserver\frame\library\frame.php on line 60 and defined<br />
+  on line 111 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] ReflectionMethod::invokeArgs() expects parameter 2 to be array, null given<br />
+  on line 111 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] ReflectionMethod::invokeArgs() expects exactly 2 parameters, 1 given<br />
+  on line 111 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined offset: 3<br />
+  on line 27 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 0<br />
+  on line 41 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined offset: 2<br />
+  on line 44 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined offset: 2<br />
+  on line 44 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined offset: 2<br />
+  on line 44 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 0<br />
+  on line 41 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 0<br />
+  on line 41 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 0<br />
+  on line 41 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 0<br />
+  on line 42 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 0<br />
+  on line 42 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 0<br />
+  on line 42 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 0<br />
+  on line 42 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 0<br />
+  on line 42 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 0<br />
+  on line 42 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 0<br />
+  on line 42 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 0<br />
+  on line 42 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 0<br />
+  on line 42 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 0<br />
+  on line 42 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 0<br />
+  on line 42 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined offset: 2<br />
+  on line 43 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined offset: 2<br />
+  on line 45 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined offset: 2<br />
+  on line 45 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined offset: 2<br />
+  on line 45 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined offset: 1<br />
+  on line 45 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: controller<br />
+  on line 74 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined offset: 1<br />
+  on line 54 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Use of undefined constant i - assumed 'i'<br />
+  on line 61 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: i<br />
+  on line 61 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined offset: 1<br />
+  on line 64 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Use of undefined constant i - assumed 'i'<br />
+  on line 61 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: i<br />
+  on line 61 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined offset: 1<br />
+  on line 64 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Use of undefined constant i - assumed 'i'<br />
+  on line 62 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: i<br />
+  on line 62 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined offset: 1<br />
+  on line 65 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Use of undefined constant i - assumed 'i'<br />
+  on line 62 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: i<br />
+  on line 62 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined offset: 1<br />
+  on line 66 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Use of undefined constant i - assumed 'i'<br />
+  on line 62 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: i<br />
+  on line 62 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined offset: 1<br />
+  on line 66 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 2<br />
+  on line 17 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 2<br />
+  on line 17 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 2<br />
+  on line 17 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 2<br />
+  on line 17 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 2<br />
+  on line 17 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 2<br />
+  on line 17 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.preg-match</a>]: Compilation failed: nothing to repeat at offset 2<br />
+  on line 17 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: vars<br />
+  on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: vars<br />
+  on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: vars<br />
+  on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: vars<br />
+  on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: vars<br />
+  on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: vars<br />
+  on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: vars<br />
+  on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: vars<br />
+  on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: vars<br />
+  on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: vars<br />
+  on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: vars<br />
+  on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: vars<br />
+  on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: vars<br />
+  on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: vars<br />
+  on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: vars<br />
+  on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: vars<br />
+  on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: vars<br />
+  on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />

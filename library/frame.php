@@ -15,7 +15,7 @@ class Frame
     protected function __construct()
     {
     	if (empty($this->config)){
-			$this->config = require_once APP_PATH.'config.php';
+			$this->config = require_once APP_PATH.'config/default.php';
     	}
     	/*
 		 * core class load
@@ -108,7 +108,7 @@ class Frame
 		//Open cache
 		ob_start();
 		// The method of the execution controller
-		$method->invokeArgs($controller, $mappingArr['params']);
+		$method->invokeArgs($controller,array());
 		
 		//View Control
 		if ($controller->useLayout){

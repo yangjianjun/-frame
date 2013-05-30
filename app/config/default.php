@@ -13,7 +13,8 @@ return  array(
 
 	'baseUrl'				=>'/public',  				// front base url
 
-
+	'urlRule'               =>2 ,                       //url Rule 1 is: controller/action/parameter1/value1/parameter2/value2...
+														//2 is: controller/action[/]?Parameter1=value1&Parameter2=value2...
 	'db'=>array(					    				//Database Link Settings
 		'host'				=>'localhost',  			//Database host name or IP
 		'user'				=>'root',					//User name
