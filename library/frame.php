@@ -18,9 +18,13 @@ class Frame
 			$this->config = require_once APP_PATH.'config/default.php';
     	}
     	/*
-		 * core class load
+		 * core class load and base class
 		 * */		
-		require_once LIB_PATH.'core.php';
+		require_once LIB_PATH.'load.php';
+		/**
+		* Set the object automatically loaded
+		*/
+		spl_autoload_register(array('Load', 'loadClass'));
     	/*
 		 * set error function
 		 * */

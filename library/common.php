@@ -1,13 +1,4 @@
 <?php 
-
-/**
- * 通用类
- * 里面都是静态方法
- * @copyright zhengshufa 
- * @author zhengshufa
- * @createTime 2009-06-23
- */
-
 class Common{
 	
 
@@ -270,4 +261,22 @@ class Common{
 		curl_close( $ch );
         return $contents;
     }
+	//input data secure Filter
+	public static function secureFilter($data=null){
+		if (empty($data)){
+			return false ;
+		}
+		//Proposed transfer
+		if (version_compare(phpversion(), '5.4.0',">=")
+		 || !get_magic_quotes_gpc()){
+			if (is_array($data)){
+				foreach ($data as $k=>$v) {
+					$data[$k] = addslashes($data[$k]);
+				}
+			}else {
+				$data = addslashes($data);
+			}
+		}
+		return $data;
+	}
 }

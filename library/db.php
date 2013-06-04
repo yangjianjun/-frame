@@ -1,53 +1,130 @@
 <?php 
-
 /**
  * 数据库操作类 db 使用->PDO 接口
  */
-
-class db
+class Db
 {   
-	protected static $_this; //存储自身对象 
+	private $dbconfig			= array();
     private $db;
-    private $dsn = "";
-    private $user = "";
-    private $pass = "";
-    private $fetch_mode = PDO::FETCH_ASSOC;//读取数据方式FETCH_ASSOC \FETCH_NUM \FETCH_BOTH \FETCH_OBJ
+    private $fetch_mode 		= PDO::FETCH_ASSOC;//读取数据方式FETCH_ASSOC \FETCH_NUM \FETCH_BOTH \FETCH_OBJ
 
+    protected static $_instance	=null; //存储自身对象 
+    protected static $_read 	=null; //存储自身对象 
+    protected static $_write	=null; //存储自身对象 
     /**
      * 私有构造函数
      * @return  void
      */
     private function __construct() 
     {
-    	$frame		= Frame::getInstance();
-    	$dbconfig = & $frame->config['db'];
-        $this->dsn = "mysql:host={$dbconfig['host']};dbname={$dbconfig['dbname']}";
-        $this->user = $dbconfig['user'];
-        $this->pass = $dbconfig['password'];
-
-        $this->db = new PDO($this->dsn, $this->user, $this->pass, array(PDO::ATTR_PERSISTENT => $dbconfig['conmode']));
-        $this->db->exec('SET NAMES '.$dbconfig['charset']);
+		//load dbconfig from config file
+		$dbconfig					 = Frame::getInstance()->config['db'];
+		//dbconfig is Two-dimensional array
+		if (!is_array($dbconfig) || !isset($dbconfig[0]) || isset($dbconfig[0]) && !is_array($dbconfig[0])){
+			throw new Exception(" dbconfig is not Two-dimensional array !");
+		}
+		//set master 
+    	$this->dbconfig['master']	 = $dbconfig[0];
+    	//is has slave
+    	if (count($dbconfig)>1){
+    		// selected slave items
+    		$this->dbconfig['slave'] = array_slice($dbconfig, 1);
+    	}else {
+    		//no slave
+    		$this->dbconfig['slave'] = false ;
+    	}
     }
    
     /**
      * create database instance
      * @return pdoquery class object
      */
-    public static function instance()
+    public static function getInstance()
     {
-    	if (!is_object(self::$_this)) {
-    		self::$_this = new db();
+    	if (!is_object(self::$_instance)) {
+    		self::$_instance = new self();
     	}
-    	return self::$_this;
+    	return self::$_instance;
     } 
     
+     /**
+     * $flag is true ,separate Read and Write
+     * $flag is false or  dbconfig['slave'] is null ,all operate in master
+     * @param string $sql
+     * @param bool $flag
+     */
+    public function separateReadWrite($sql=null,$flag=true){
+    	if (empty($sql)){
+    		return false ;
+    	}
+    	//Separate read and write by select ,insert ,update ,delete
+    	if ($flag && $this->dbconfig['slave']){
+    		if (trim($sql) == ''){
+    			return false;
+    		}
+	    	$sql = trim(strtolower($sql));
+	    	//Separate read and write by select ,insert ,update ,delete
+	    	if (substr($sql, 0, 6) == 'select'){
+	    		//read
+				$this->connectDb($sql,true);
+	    	}else {
+				//write
+	    		$this->connectDb($sql,false);
+	    	}
+    	}else { // read and write both on master 
+	    	$this->connectDb($sql,false);
+    	}
+    }
+    
+
+
+    /**
+     * $flag is true ,select connect master ;insert ,update ,delete connect slave
+     * $flag is false or dbconfig['slave'] is null ,all operate connect master
+     * @param string $sql
+     * @param bool $flag
+     */
+    private function connectDb($sql=null,$flag=true){
+    	if (empty($sql)){
+    		return false ;
+    	}
+    	if ($flag && $this->dbconfig['slave']){
+    		if (is_object(self::$_read )){
+    			$this->db = self::$_read ;
+    		}else {
+				$rand 			= rand(0,count($this->dbconfig['slave'])-1);
+	   			$dbconfig 		= $this->dbconfig['slave'][$rand];
+	   			$dsn 			= "mysql:host={$dbconfig['host']};dbname={$dbconfig['dbname']}";
+				$user			= $dbconfig['user'];
+				$pass 			= $dbconfig['password'];  		
+				$this->db 		= new PDO($dsn, $user, $pass, array(PDO::ATTR_PERSISTENT => $dbconfig['conmode']));
+				$this->db->exec('SET NAMES '.$dbconfig['charset']);
+				self::$_read 	= $this->db ;
+    		}
+    		Logs::setFileLogs("db/read_write_".date("m").".log",$sql."\t".(isset($dbconfig)?$dbconfig['host']:'use old read connect'),10 );
+    	}else {
+    		if (is_object(self::$_write )){
+    			$this->db = self::$_write ;
+    		}else {
+				$dbconfig 		= $this->dbconfig['master'];	
+				$dsn 			= "mysql:host={$dbconfig['host']};dbname={$dbconfig['dbname']}";
+				$user 			= $dbconfig['user'];
+				$pass 			= $dbconfig['password'];  		
+				$this->db 		= new PDO($dsn, $user, $pass, array(PDO::ATTR_PERSISTENT => $dbconfig['conmode']));
+				$this->db->exec('SET NAMES '.$dbconfig['charset']);
+				self::$_write 	= $this->db ;
+    		}
+    		Logs::setFileLogs("db/read_write_".date("m").".log",$sql."\t".(isset($dbconfig)?$dbconfig['host']:'use old write connect'),10 );
+    	}
+    }
     /**
      * 查询
      * @param  string $sql
      * @return  array 查询得到的数据数组
      */
-    public function query($sql)
+    public function query($sql,$flag=true)
     {
+    	$this->separateReadWrite($sql,$flag);
     	Performance::monitor($sql,Performance::BEGIN);
         $this->db->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
         $rs = $this->db->query($sql);
@@ -63,18 +140,21 @@ class db
      * @param  string $sql
      * @return  boolean 成功true
      */
-    public function exec($sql)
+    public function exec($sql,$flag=true)
     {
+    	$this->separateReadWrite($sql,$flag);
     	Performance::monitor($sql,Performance::BEGIN);
-        $data = $this->db->exec($sql);
+        $res = $this->db->exec($sql);
         Performance::monitor($sql,Performance::END);
+        return $res;
     }
    
     /**
      * @return  最新插入的数据ID
      */
-    public function getId()
+    public function getId($flag=true)
     {
+    	$this->separateReadWrite("insert",$flag);
         return $this->db->lastInsertId();
     }
 
@@ -84,10 +164,14 @@ class db
      * @param  string $sql
      * @return  string
      */
-    public function getOne($sql)
+    public function getOne($sql,$flag=true)
     {
+    	$this->separateReadWrite($sql,$flag);
+    	Performance::monitor($sql,Performance::BEGIN);
         $rs = $this->db->query($sql);
-        return $rs->fetchColumn();
+        $data = $rs->fetchColumn();
+        Performance::monitor($sql,Performance::END);
+        return $data ;
     } 
     
     /**
@@ -96,11 +180,15 @@ class db
      * @param  string $sql
      * @return  string
      */
-    public function getOneResult($sql)
+    public function getOneResult($sql,$flag=true)
     {
-        $rs = $this->db->query($sql);
+    	$this->separateReadWrite($sql,$flag);
+    	Performance::monitor($sql,Performance::BEGIN);
+        $rs 	= $this->db->query($sql);
         $rs->setFetchMode($this->fetch_mode);
-        return $rs->fetch();
+        $data 	= $rs->fetch();
+        Performance::monitor($sql,Performance::END);
+        return $data ;
     }
     
     /**
@@ -174,14 +262,16 @@ class db
 		if(empty($tName) || empty($data)){
 			return false ;
 		}
+		//secure filter
+		$data = Common::secureFilter($data);
 		//生成sql语句
-		$sql = "insert into ``{$tName}`` (" ;
+		$sql = "insert into `{$tName}` (`" ;
 		//加入字段名
-		$sql.= implode(',',array_keys($data)).')  values (';
-
+		$sql.= implode('`,`',array_keys($data)).'`)  values (';
 		//加值
 		$sql.= "'".implode("','",array_values($data))."')";
 		
+		echo $sql;
 		//执行
 		return $this->exec($sql);
 	}
@@ -193,12 +283,14 @@ class db
 		if(empty($tName) || empty($data)){
 			return false ;
 		}
+		//secure filter
+		$data 	= Common::secureFilter($data);
 		//生成sql
 		$sql="update `{$tName}` set " ;
 		
 		//加set
 		foreach ($data as $k=>$v) {
-			$sql.= "$k='".$v."'," ;
+			$sql.= "`$k`='".$v."'," ;
 		}
 		
 		//去最后的,
@@ -208,7 +300,7 @@ class db
 		if(!empty($where)){
 			$sql.= ' where '.$where ;
 		}
-
+		echo $sql ;
 		//执行
 		return $this->exec($sql);
 	}
@@ -241,7 +333,6 @@ class db
 		}
 //		echo $sql ;
 		//执行
-	
 		return $this->query($sql) ;
 	}
 	

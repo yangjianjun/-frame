@@ -47,8 +47,6 @@ class Error
 		
 	    return true;  
 	}  
-	
-	
 	//先定义一个函数，也可以定义在其他的文件中，再用require()调用  
 	public static function myExceptionHandler($e)
 	{   
@@ -70,5 +68,4 @@ class Error
 		}
 	    return true;  
 	}  
-
 }

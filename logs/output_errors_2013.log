@@ -488,3 +488,185 @@ Unknown error type: [2] preg_match() [<a href='function.preg-match'>function.pre
   on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
 <b> NOTICE</b> [8] Undefined variable: vars<br />
   on line 70 in file D:\webserver\frame\library\router.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: host<br />
+  on line 24 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: dbname<br />
+  on line 24 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: user<br />
+  on line 25 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: password<br />
+  on line 26 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: conmode<br />
+  on line 28 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: host<br />
+  on line 24 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: dbname<br />
+  on line 24 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: user<br />
+  on line 25 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: password<br />
+  on line 26 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: conmode<br />
+  on line 28 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: host<br />
+  on line 24 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: dbname<br />
+  on line 24 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: user<br />
+  on line 25 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: password<br />
+  on line 26 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: conmode<br />
+  on line 28 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: host<br />
+  on line 24 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: dbname<br />
+  on line 24 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: user<br />
+  on line 25 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: password<br />
+  on line 26 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: conmode<br />
+  on line 28 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] PDO::__construct() [<a href='pdo.--construct'>pdo.--construct</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://10.41.134.250:3306)<br />
+  on line 92 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] PDO::__construct() [<a href='pdo.--construct'>pdo.--construct</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://10.41.134.250:3306)<br />
+  on line 92 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] PDO::__construct() [<a href='pdo.--construct'>pdo.--construct</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://10.41.134.250:3306)<br />
+  on line 92 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] PDO::__construct() [<a href='pdo.--construct'>pdo.--construct</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://10.41.134.250:3306)<br />
+  on line 92 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] PDO::__construct() [<a href='pdo.--construct'>pdo.--construct</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://10.41.134.250:3306)<br />
+  on line 92 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] PDO::__construct() [<a href='pdo.--construct'>pdo.--construct</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://10.41.134.250:3306)<br />
+  on line 92 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] PDO::__construct() [<a href='pdo.--construct'>pdo.--construct</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://10.41.134.250:3306)<br />
+  on line 92 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] PDO::__construct() [<a href='pdo.--construct'>pdo.--construct</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://10.41.134.250:3306)<br />
+  on line 92 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] PDO::__construct() [<a href='pdo.--construct'>pdo.--construct</a>]: [2002] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试 (trying to connect via tcp://10.41.134.250:3306)<br />
+  on line 92 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] file_put_contents(db/read_write_06.log) [<a href='function.file-put-contents'>function.file-put-contents</a>]: failed to open stream: No such file or directory<br />
+  on line 33 in file D:\webserver\frame\library\logs.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] mkdir() [<a href='function.mkdir'>function.mkdir</a>]: File exists<br />
+  on line 45 in file D:\webserver\frame\library\logs.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed<br />
+  on line 270 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed<br />
+  on line 270 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] implode() [<a href='function.implode'>function.implode</a>]: Invalid arguments passed<br />
+  on line 270 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 122 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 122 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 122 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 122 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 122 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 122 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 122 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 122 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 122 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 122 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 122 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 122 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 122 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 122 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 122 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 122 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 122 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 121 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: dbconfig<br />
+  on line 122 in file D:\webserver\frame\library\db.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] set_exception_handler() expects the argument (exception::myExceptionHandler) to be a valid callback<br />
+  on line 31 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] set_exception_handler() expects the argument (exception::myExceptionHandler) to be a valid callback<br />
+  on line 31 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] set_exception_handler() expects the argument (exception::myExceptionHandler) to be a valid callback<br />
+  on line 31 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] set_exception_handler() expects the argument (exception::myExceptionHandler) to be a valid callback<br />
+  on line 31 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] set_exception_handler() expects the argument (exception::myExceptionHandler) to be a valid callback<br />
+  on line 31 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] set_exception_handler() expects the argument (exception::myExceptionHandler) to be a valid callback<br />
+  on line 31 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] set_exception_handler() expects the argument (exception::myExceptionHandler) to be a valid callback<br />
+  on line 31 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] set_exception_handler() expects the argument (exception::myExceptionHandler) to be a valid callback<br />
+  on line 31 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
