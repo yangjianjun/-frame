@@ -9,9 +9,18 @@ class Router
 	}
 	public function mapping($pathInfo=null){
 		$frame 			= Frame::getInstance();
+		$mappingArr 	= array();
+		
+		//first match rewirte config
+		$mappingArr     = $this->rewriteUrl($pathInfo) ;
+		if ($mappingArr){
+			return $mappingArr ;
+		}
+		
+		
 		$dController 	= $frame->config['controller'] ;
 		$dMethod 		= $frame->config['action'] ;
-		$mappingArr 	= array();
+		
 		if ($frame->config['urlRule']==1){
 			//this is urlRule 2
 			if (preg_match("/&|\?|\=/i", $pathInfo)){
@@ -73,5 +82,17 @@ class Router
 			}
 		}
 		return $mappingArr ;	
+	}
+	//first match rewirte config
+	public function rewriteUrl($pathInfo){
+		$rewriteUrlArr = include_once APP_PATH.'config/rewrite.php';
+		foreach ($rewriteUrlArr as $item) {
+			if (preg_match("#".$item['regex']."#i", $pathInfo)) {
+				$mappingArr['controller'] 	= $item['c'];
+				$mappingArr['method']		= $item['a'];
+				return $mappingArr ;
+			}
+		}
+		return false ;
 	}
 }

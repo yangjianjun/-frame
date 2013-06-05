@@ -28,4 +28,23 @@ class Response
 		}
 		return $this ;
 	}
+	/**
+     * Returns an array with all the variables in the session, fetching them
+     */
+	public function session($key = '', $value = '')
+	{
+		if ($value !== '') $_SESSION[$key] = $value;
+		if ($key) return @$_SESSION[$key];
+		return $_SESSION;
+	}
+
+	/**
+     * Returns an array with the contents of the $_COOKIE global variable
+     */
+	public function cookie($key = '', $value = '')
+	{
+		if ($value !== '') $_COOKIE[$key] = $value;
+		if ($key) return @$_COOKIE[$key];
+		return $_COOKIE;
+	}
 }

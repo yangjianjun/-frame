@@ -3,7 +3,7 @@ class Common{
 	
 
 	/**
-     * @author guopingleee
+     * 
 	 * @Encrypt Function (编码)
      * @createTime: 2011-12-16
      */
@@ -17,7 +17,7 @@ class Common{
 	}
 
 	/**
-     * @author guopingleee
+     * 
 	 * @Decrypt Function (解码)
 	 * @createTime: 2011-12-16
      */
@@ -32,7 +32,7 @@ class Common{
 
 
 	/**
-     * @author zhengshufa
+     * 
      * @todo: format date time
      * @createTime: 2009-09-10
      */

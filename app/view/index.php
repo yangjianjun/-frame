@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>index layout</title>
+<script type="text/javascript" src="<?php echo $this->baseUrl;?>/js/jquery.js"></script>
 </head>
 <body>
 <div>

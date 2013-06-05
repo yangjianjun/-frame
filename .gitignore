@@ -1,4 +1,5 @@
-.buildpath
-.settings/*
-.project
-/cache/*
+#.buildpath
+#.project
+#.settings/*
+#/cache/*
+#/logs/*
