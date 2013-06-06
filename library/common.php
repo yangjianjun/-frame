@@ -279,4 +279,9 @@ class Common{
 		}
 		return $data;
 	}
+	
+	
+	public function setCache($id, $data, $lifetime = 3600){
+	
+	}
 }

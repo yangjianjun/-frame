@@ -670,3 +670,47 @@ Unknown error type: [2] set_exception_handler() expects the argument (exception:
   on line 31 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
 Unknown error type: [2] set_exception_handler() expects the argument (exception::myExceptionHandler) to be a valid callback<br />
   on line 31 in file D:\webserver\frame\library\frame.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] require_once(cache\.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory<br />
+  on line 35 in file D:\webserver\frame\library\cache.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: driver<br />
+  on line 33 in file D:\webserver\frame\library\cache.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: driver<br />
+  on line 35 in file D:\webserver\frame\library\cache.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] require_once(cache\.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory<br />
+  on line 35 in file D:\webserver\frame\library\cache.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: cache_dir<br />
+  on line 23 in file D:\webserver\frame\library\cache\file.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: cache_dir<br />
+  on line 23 in file D:\webserver\frame\library\cache\file.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: driver<br />
+  on line 30 in file D:\webserver\frame\library\cache.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: driver<br />
+  on line 32 in file D:\webserver\frame\library\cache.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] require_once(cache\.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory<br />
+  on line 32 in file D:\webserver\frame\library\cache.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: driver<br />
+  on line 32 in file D:\webserver\frame\library\cache.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] require_once(cache\.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory<br />
+  on line 32 in file D:\webserver\frame\library\cache.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: host<br />
+  on line 44 in file D:\webserver\frame\library\cache\memcache.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: port<br />
+  on line 44 in file D:\webserver\frame\library\cache\memcache.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: persistent<br />
+  on line 44 in file D:\webserver\frame\library\cache\memcache.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: weight<br />
+  on line 44 in file D:\webserver\frame\library\cache\memcache.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: timeout<br />
+  on line 44 in file D:\webserver\frame\library\cache\memcache.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: retry_interval<br />
+  on line 44 in file D:\webserver\frame\library\cache\memcache.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: status<br />
+  on line 44 in file D:\webserver\frame\library\cache\memcache.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: failure_callback<br />
+  on line 44 in file D:\webserver\frame\library\cache\memcache.php , PHP 5.3.6 (WINNT)<br />
+Unknown error type: [2] Memcache::addserver() [<a href='memcache.addserver'>memcache.addserver</a>]: weight must be a positive integer<br />
+  on line 44 in file D:\webserver\frame\library\cache\memcache.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: host<br />
+  on line 46 in file D:\webserver\frame\library\cache\memcache.php , PHP 5.3.6 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined index: port<br />
+  on line 46 in file D:\webserver\frame\library\cache\memcache.php , PHP 5.3.6 (WINNT)<br />

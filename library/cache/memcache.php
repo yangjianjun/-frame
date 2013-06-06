@@ -27,23 +27,13 @@ class Cache_Memcache extends cache{
 		parent::__construct($config);
 		$this->_memcache = new Memcache;
 		$this->_config = $config;
-		$server = $config;
-		// Setup default server configuration
-		$this->_default_config = array(
-		'host'             => '192.168.1.62',
-		'port'             => 11211,
-		'persistent'       => FALSE,
-		'weight'           => 2,
-		'timeout'          => 5,
-		'retry_interval'   => 15,
-		'status'           => TRUE,
-		'instant_death'	   => TRUE,
-		'failure_callback' => array($this, '_failed_request'),
-		);
+		$serverArr = $config;
 		//$server =$this->_default_config;
-		if(!$this->_memcache->addServer($server['host'], $server['port'], $server['persistent'], $server['weight'], $server['timeout'], $server['retry_interval'], $server['status'], $server['failure_callback']))
-		{
-			die('Memcache could not connect to host \':host\' using host:'.$server['host'].',    port:'.$server['port']);
+		foreach ($serverArr as $server) {
+			if(!$this->_memcache->addServer($server['host'], $server['port'], $server['persistent'], $server['weight'], $server['timeout'], $server['retry_interval'], $server['status'], $server['failure_callback']))
+			{
+				die('Memcache could not connect to host \':host\' using host:'.$server['host'].',    port:'.$server['port']);
+			}
 		}
 		$this->_flags = FALSE;
 	}
@@ -71,16 +61,8 @@ class Cache_Memcache extends cache{
 		if ($lifetime > Cache_Memcache::CACHE_CEILING)
 		{
 			// Set the lifetime to maximum cache time
-			$lifetime = Cache_Memcache::CACHE_CEILING + time();
-		}
-		// Else if the lifetime is greater than zero
-		elseif ($lifetime > 0)
-		{
-			$lifetime += time();
-		}
-		// Else
-		else
-		{
+			$lifetime = Cache_Memcache::CACHE_CEILING ;
+		}else{
 			// Normalise the lifetime
 			$lifetime = 0;
 		}

@@ -131,7 +131,7 @@ class Cache_File extends cache{
 		if ($lifetime === NULL)
 		{
 			// Set to the default expiry
-			$lifetime = Arr::get($this->_config, 'default_expire', Cache::DEFAULT_EXPIRE);
+			$lifetime = Cache::DEFAULT_EXPIRE;
 		}
 
 		// Open directory

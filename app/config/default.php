@@ -41,25 +41,50 @@ return  array(
 									'conmode'			=>false						//true to the long connection mode, false for the short connection mode
 								),
 	),
-	'upload'=>array(
-		'direct'			=>'upload',
-		'size'				=>2097152    				//2M
+	'upload'				=>array(
+									'direct'			=>'upload',
+									'size'				=>2097152    				//2M
 	),
-	'page'=>array(
-		'psize'				=>10,						//The number of records per page
-		'pnum'				=>5							//Page Offset
+	'page'					=>array(
+									'psize'				=>10,						//The number of records per page
+									'pnum'				=>5							//Page Offset
 	),
-	'cache'=>array(
-		'driver'		   	=>"memcache",				//apc //file
-		'host'             	=> '192.168.1.62',
-		'port'             	=> 11211,
-		'persistent'       	=> FALSE,
-		'weight'           	=> 1,
-		'timeout'          	=> 1,
-		'retry_interval'   	=> 15,
-		'status'           	=> TRUE,
-		'instant_death'	   	=> TRUE,
-		'failure_callback' 	=> null
+	
+	
+	'cache'					=>array(
+									array(	
+										'host'             	=> '10.41.134.190',
+										'port'             	=> 10000,
+										'persistent'       	=> FALSE,
+										'weight'           	=> 1,
+										'timeout'          	=> 1,
+										'retry_interval'   	=> 15,
+										'status'           	=> TRUE,
+										'instant_death'	   	=> TRUE,
+										'failure_callback' 	=> null
+									),
+									array(	
+										'host'             	=> '10.41.134.190',
+										'port'             	=> 10001,
+										'persistent'       	=> FALSE,
+										'weight'           	=> 1,
+										'timeout'          	=> 1,
+										'retry_interval'   	=> 15,
+										'status'           	=> TRUE,
+										'instant_death'	   	=> TRUE,
+										'failure_callback' 	=> null
+									),
+									array(	
+										'host'             	=> '10.41.134.190',
+										'port'             	=> 10002,
+										'persistent'       	=> FALSE,
+										'weight'           	=> 1,
+										'timeout'          	=> 1,
+										'retry_interval'   	=> 15,
+										'status'           	=> TRUE,
+										'instant_death'	   	=> TRUE,
+										'failure_callback' 	=> null
+									)
 	),
-	'core'=>array('now'		=>date('Y-m-d H:i:s'))
+	'core'					=>array('now'				=>date('Y-m-d H:i:s'))
 );

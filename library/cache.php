@@ -16,23 +16,20 @@ abstract class Cache {
 	/**
 	 * @param   string   the name of the cache group to use [Optional]
 	 * @return  Kohana_Cache
-	 * @throws  Cache_Exception
+	 * @throws  Exception
 	 */
-	public static function instance($group = NULL)
+	public static function getInstance($group = NULL)
 	{
 		// If there is no group supplied
-		$config = & $GLOBALS['config']['cache'];
-		if($group === NULL){
-			$group = $config["driver"];
-		}
+		$config = Frame::getInstance()->config['cache'];
 		if ($group === NULL)
 		{
 			// Use the default setting
 			$group = Cache::$default;
 		}
-		$cache_class = 'Cache_'.ucfirst($config['driver']);
+		$cache_class = 'Cache_'.ucfirst($group);
 		if(!class_exists($cache_class, false)){
-	   		require(DRIVER.'cache'.DIRECTORY_SEPARATOR.$config["driver"].EXT);
+	   		require_once('cache'.DIRECTORY_SEPARATOR.$group.EXT);
 		}
 		
 		Cache::$instances[$group] = new $cache_class($config);
@@ -53,7 +50,6 @@ abstract class Cache {
 	protected function __construct(array $config)
 	{
 		$this->config($config);
-		$config = & $GLOBALS['config']['cache'];
 	}
 
 	/**
@@ -85,11 +81,11 @@ abstract class Cache {
 	 * Overload the __clone() method to prevent cloning
 	 *
 	 * @return  void
-	 * @throws  Cache_Exception
+	 * @throws  Exception
 	 */
 	final public function __clone()
 	{
-		throw new Cache_Exception('Cloning of Kohana_Cache objects is forbidden');
+		throw new Exception('Cloning of Kohana_Cache objects is forbidden');
 	}
 
 	/**
@@ -107,7 +103,7 @@ abstract class Cache {
 	 * @param   string   id of cache to entry
 	 * @param   string   default value to return if cache miss
 	 * @return  mixed
-	 * @throws  Cache_Exception
+	 * @throws  Exception
 	 */
 	abstract public function get($id, $default = NULL);
 

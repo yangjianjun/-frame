@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>layout</title>
 <script type="text/javascript" src="<?php echo $this->baseUrl;?>/js/jquery.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl;?>/js/common.js"></script>
 <!--<link type="text/css" rel="stylesheet" href="<?php echo $this->baseUrl;?>/css/index.css" />-->
 </head>
 <body>
