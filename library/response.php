@@ -24,8 +24,9 @@ class Response
 				header("{$k}:{$v}");
 			}
 		}else {
-			Header("content-type","text/html;charset=utf-8");
+			header("content-type","text/html;charset=utf-8");
 		}
+		header("from:".apache_get_version());
 		return $this ;
 	}
 	/**

@@ -93,7 +93,7 @@ class Frame
 			if (file_exists($cFile)){
 				require_once $cFile;
 			}else {
-				//throw new Exception("load {$cFile} fail ",404);
+				throw new Exception("load {$cFile} fail ",404);
 			}
 			//controller class naming convention is: file name (first letter capitalized) + '_Controller'
 			$class = new ReflectionClass('Controller_'.ucfirst($mappingArr['controller']));
@@ -121,6 +121,8 @@ class Frame
 		}
 		$controller->response 		= $frame->response ;
 		
+		//set haeders
+		$controller->response->setHeader();
 		
 		//Open cache
 		ob_start();
