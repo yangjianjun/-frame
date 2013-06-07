@@ -26,7 +26,7 @@ class Response
 		}else {
 			header("content-type","text/html;charset=utf-8");
 		}
-		header("from:".apache_get_version());
+		header("from:".apache_get_version().",ip=".apache_getenv("server_addr"));
 		return $this ;
 	}
 	/**
