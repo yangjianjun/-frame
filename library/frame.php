@@ -15,8 +15,9 @@ class Frame
     protected function __construct()
     {
     	if (empty($this->config)){
-			$this->config = require_once APP_PATH.'config/default.php';
+			$this->config(require_once APP_PATH.'config/default.php');
     	}
+    	
     	/*
 		 * core class load and base class
 		 * */		
@@ -33,6 +34,17 @@ class Frame
 		 *  set exception function
 		 * */
 		set_exception_handler(array('error', $this->config['exceptionHandler']));
+    }
+    
+    protected function config($config)
+    {
+    	if (empty($config)){
+    		return false;
+    	}
+    	//timezone
+    	if (isset($config['timezone'])){
+    		date_default_timezone_set($config['timezone']);
+    	}
     }
     /**
      * Singleton instance

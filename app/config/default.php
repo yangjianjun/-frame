@@ -86,5 +86,5 @@ return  array(
 										'failure_callback' 	=> null
 									)
 	),
-	'core'					=>array('now'				=>date('Y-m-d H:i:s'))
+	'timezone'				=>'Asia/Shanghai'
 );
