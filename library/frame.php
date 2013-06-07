@@ -41,6 +41,7 @@ class Frame
     	if (empty($config)){
     		return false;
     	}
+    	$this->config = $config ;
     	//timezone
     	if (isset($config['timezone'])){
     		date_default_timezone_set($config['timezone']);
@@ -92,7 +93,7 @@ class Frame
 			if (file_exists($cFile)){
 				require_once $cFile;
 			}else {
-				throw new Exception("load {$cFile} fail ",404);
+				//throw new Exception("load {$cFile} fail ",404);
 			}
 			//controller class naming convention is: file name (first letter capitalized) + '_Controller'
 			$class = new ReflectionClass('Controller_'.ucfirst($mappingArr['controller']));
