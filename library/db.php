@@ -1,7 +1,4 @@
 <?php 
-/**
- * 数据库操作类 db 使用->PDO 接口
- */
 class Db
 {   
 	private $dbconfig			= array();
