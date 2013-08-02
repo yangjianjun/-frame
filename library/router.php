@@ -31,7 +31,6 @@ class Router
 				$vars 						= @explode('/', $pathInfo);
 				$mappingArr['controller'] 	= isset($vars[1]) ?$vars[1]:$dController;
 				$mappingArr['method']	 	= isset($vars[2]) && !empty($vars[2])?$vars[2]:$dMethod;
-				print_r($vars);
 				$params	 					= array_slice($vars, 3);
 			}else {//default controller and action
 				$mappingArr['controller'] 	= $dController;

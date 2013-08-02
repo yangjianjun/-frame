@@ -1,0 +1,28 @@
+Unknown error type: [2] Cannot modify header information - headers already sent by (output started at C:\web\frame\library\error.php:64)<br />
+  on line 166 in file C:\web\frame\library\common.php , PHP 5.2.5 (WINNT)<br />
+Unknown error type: [2] Cannot modify header information - headers already sent by (output started at C:\web\frame\library\error.php:64)<br />
+  on line 167 in file C:\web\frame\library\common.php , PHP 5.2.5 (WINNT)<br />
+Unknown error type: [2] Cannot modify header information - headers already sent by (output started at C:\web\frame\library\error.php:64)<br />
+  on line 168 in file C:\web\frame\library\common.php , PHP 5.2.5 (WINNT)<br />
+Unknown error type: [2] Cannot modify header information - headers already sent by (output started at C:\web\frame\library\error.php:64)<br />
+  on line 166 in file C:\web\frame\library\common.php , PHP 5.2.5 (WINNT)<br />
+Unknown error type: [2] Cannot modify header information - headers already sent by (output started at C:\web\frame\library\error.php:64)<br />
+  on line 167 in file C:\web\frame\library\common.php , PHP 5.2.5 (WINNT)<br />
+Unknown error type: [2] Cannot modify header information - headers already sent by (output started at C:\web\frame\library\error.php:64)<br />
+  on line 168 in file C:\web\frame\library\common.php , PHP 5.2.5 (WINNT)<br />
+Unknown error type: [2] Cannot modify header information - headers already sent by (output started at C:\web\frame\library\view.php:58)<br />
+  on line 27 in file C:\web\frame\library\response.php , PHP 5.2.5 (WINNT)<br />
+Unknown error type: [2] Cannot modify header information - headers already sent by (output started at C:\web\frame\library\view.php:58)<br />
+  on line 27 in file C:\web\frame\library\response.php , PHP 5.2.5 (WINNT)<br />
+Unknown error type: [2] Cannot modify header information - headers already sent by (output started at C:\web\frame\library\view.php:59)<br />
+  on line 27 in file C:\web\frame\library\response.php , PHP 5.2.5 (WINNT)<br />
+Unknown error type: [2] Cannot modify header information - headers already sent by (output started at C:\web\frame\library\view.php:59)<br />
+  on line 27 in file C:\web\frame\library\response.php , PHP 5.2.5 (WINNT)<br />
+Unknown error type: [2] Cannot modify header information - headers already sent by (output started at C:\web\frame\library\view.php:58)<br />
+  on line 27 in file C:\web\frame\library\response.php , PHP 5.2.5 (WINNT)<br />
+Unknown error type: [2] Cannot modify header information - headers already sent by (output started at C:\web\frame\library\view.php:58)<br />
+  on line 27 in file C:\web\frame\library\response.php , PHP 5.2.5 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: layoutFile<br />
+  on line 151 in file C:\web\frame\library\frame.php , PHP 5.2.5 (WINNT)<br />
+<b> NOTICE</b> [8] Undefined variable: layoutFile<br />
+  on line 151 in file C:\web\frame\library\frame.php , PHP 5.2.5 (WINNT)<br />

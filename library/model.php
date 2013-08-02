@@ -18,8 +18,9 @@ class Model{
 		return $this->db->count($this->tbName,$where);
 	}
 	//封装fetchAll
-	public function fetchAll($where=null,$limit=null){
-		return $this->db->fetchAll($this->tbName,$where,$limit);
+	
+	public function fetchAll($where=null,$group=null,$orderBy=null,$limit=null){
+		return $this->db->fetchAll($this->tbName,$where,$group,$orderBy,$limit);
 	}
 
 	//封装fetchRow
@@ -39,4 +40,10 @@ class Model{
 	public function delete($where=null){
 		return $this->db->delete($this->tbName,$where);
 	}
+ 	/**
+     * @return  最新插入的数据ID
+     */
+    public function getId($flag=true){
+        return $this->db->getId($flag);
+    }
 }

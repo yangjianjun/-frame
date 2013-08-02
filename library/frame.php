@@ -15,7 +15,9 @@ class Frame
     protected function __construct()
     {
     	if (empty($this->config)){
-			$this->config(require_once APP_PATH.'config/default.php');
+    		$configDefatul = require_once APP_PATH.'config/default.php';
+    		$configCommon = require_once APP_PATH.'config/common.php';
+			$this->config($configDefatul+$configCommon);
     	}
     	
     	/*
@@ -45,6 +47,11 @@ class Frame
     	//timezone
     	if (isset($config['timezone'])){
     		date_default_timezone_set($config['timezone']);
+    	}
+    	//timezone
+    	if (isset($config['session'])){
+    		session_start();
+    		$_SESSION['config'] = $this->config ;
     	}
     }
     /**
@@ -100,8 +107,14 @@ class Frame
 		}catch (ReflectionException $e){
 			throw new Exception("ReflectionClass controller fail ");
 		}
+		
+		//Registration controller instantiated
+		$frame 						= self::getInstance();
+		
+		
+		
 		//Generate controller reflection class instance
-		$controller = $class->newInstance($mappingArr);
+		$controller = $class->newInstance($frame->request,$mappingArr);
 		try{
 			// Load controller method
 			$method = $class->getMethod('Action_'.$mappingArr['method']);
@@ -112,17 +125,15 @@ class Frame
 			throw new Exception("load Action_".$mappingArr['controller']." fail ",404);
 		}
 		
-		//Registration controller instantiated
-		$frame 						= self::getInstance();
-		$controller->request 		= $frame->request ;
-		$controller->router 		= $frame->router ;
 		if (!is_object($frame->response)){
-			$frame->response		=	new Response();
+			$controller->response = $frame->response = new Response();
 		}
-		$controller->response 		= $frame->response ;
 		
+		$controller->router = $frame->router ;
 		//set haeders
 		$controller->response->setHeader();
+		
+		
 		
 		//Open cache
 		ob_start();
@@ -130,11 +141,14 @@ class Frame
 		$method->invokeArgs($controller,array());
 		
 		//View Control
-		if ($controller->useLayout){
+		if ($controller->autoLayout){
 			$viewFile 					= $mappingArr['controller'].'/'.$mappingArr['method'];
 			$controller->layout->content= $controller->view->render($controller->autoview ? $viewFile:null,false);
-			$layoutFile 				= $frame->config['layout'] ;
-			$controller->layout->render($controller->autoLayout? $layoutFile:null,true);
+			
+			if (empty($controller->layout->file)){
+				$controller->layout->set_file($frame->config['layout']);
+			}
+			$controller->layout->render(null,true);
 		}else {
 			$viewFile 					= $mappingArr['controller'].'/'.$mappingArr['method'];
 			$controller->view->render($controller->autoview ? $viewFile:null,true);

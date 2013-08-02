@@ -5,9 +5,10 @@
 return  array(
 	'controller'			=>'index',  				//Default controller
 	'action'				=>'index',  				//Default action
+	'autoLayout'			=> true,  				//Default Layout
 	'layout'				=>'layout',  				//Default Layout
 
-	'openperformance'		=>true,  					//Open Performance Testing
+	'openperformance'		=>false,  					//Open Performance Testing
 	'errorHandler'			=>'myErrorHandler',  		// error function
 	'exceptionHandler'		=>'myExceptionHandler',  	// exception function
 

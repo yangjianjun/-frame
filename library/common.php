@@ -166,7 +166,7 @@ class Common{
     	header("HTTP/1.1 404 Not Found");
     	header("Status: 404 Not Found");
     	header("Content-Type: text/html; charset=UTF-8");
-    	if (preg_match('/MSIE/i',input::server('HTTP_USER_AGENT'))){
+    	if (preg_match('/MSIE/i',$_SERVER['HTTP_USER_AGENT'])){
     		echo str_repeat(" ",512);
     	}
     	echo 'this 404 page <br />';
@@ -190,9 +190,10 @@ class Common{
     public static function config($str)
     {
     	list($main, $sub) = explode('.', $str);
-    	if (isset($GLOBALS['config'][$main]) && isset($GLOBALS['config'][$main][$sub])) return $GLOBALS['config'][$main][$sub];
-    	if (isset($GLOBALS['config'][$main])) return $GLOBALS['config'][$main];
-    	return $GLOBALS['config'];
+    	$config = Frame::getInstance()->config;
+    	if (isset($config[$main]) && isset($config[$main][$sub])) return $config[$main][$sub];
+    	if (isset($config[$main])) return $config[$main];
+    	return $config;
     }
     
     /**
@@ -218,7 +219,7 @@ class Common{
 		$method = isset($codes[$method]) ? (string) $method : '302';
 
 		if (strpos($uri, '://') === FALSE){
-			$uri = input::uri('base').$uri;
+//			$uri = input::uri('base').$uri;
 		}
 		if ($method === 'refresh'){
 			header('Refresh: 0; url='.$uri);
@@ -284,4 +285,56 @@ class Common{
 	public function setCache($id, $data, $lifetime = 3600){
 	
 	}
+
+	public static function formRequest($url, $paramArr=array(),$method="post") {  
+		if (empty($url)){
+			return false;
+		}
+		$form= '<form id="formRequest" action="'.$url.'" method="'.$method.'"> ';
+		if (!empty($paramArr)){
+			foreach ($paramArr as $k=>$v) {
+				$form.='<input type="hidden" name="'.$k.'" value="'.$v.'" />';
+			}
+		}
+	  	$form.='</form>';
+	  	$form.='<script>document.getElementById("formRequest").submit();</script>';
+	  	echo $form ;
+	}  
+	
+	//生成下拉框
+	public static function getSelect($name=null,$data=array(),$id=""){
+		//验证
+		if (empty($data) || empty($name)){
+			return ;
+		}
+		//生成select 下拉框
+		$selectedstr=NULL;
+		$select = '<select name="'.$name.'" style="width:150px" ><option value="" >请选择</option>';
+	    
+		foreach ($data as $k=>$o) {
+			if (is_array($o)){
+				$selectedstr = ($o["id"] == $id)?'selected':'' ;
+				$select.="<option $selectedstr value='".$o['id']."' >".$o['name']."</option>";
+			}else {
+				$selectedstr = ( $id !== "" && $k == $id  )?'selected':'' ;
+				$select.="<option $selectedstr value='".$k."' >".$o."</option>";
+			}
+		}
+		$select.='</select>';
+		//返回数据
+		return $select ;
+	}
+
+	//截取utf8字符串
+	public static function  utf8Substr($str, $from, $len)
+	{
+	    return preg_replace('#^(?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$from.'}'.
+	                       '((?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$len.'}).*#s',
+	                       '$1',$str);
+	}
+	
+	
+
+
+
 }

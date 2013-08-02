@@ -103,25 +103,6 @@ class Request {
     }
 
     /**
-     * Retrieve a member of the $_COOKIE superglobal
-     *
-     * If no $key is passed, returns the entire $_COOKIE array.
-     *
-     * @todo How to retrieve from nested arrays
-     * @param string $key
-     * @param mixed $default Default value to use if key not found
-     * @return mixed Returns null if key does not exist
-     */
-    public function getCookie($key = null, $default = null)
-    {
-        if (null === $key) {
-            return $_COOKIE;
-        }
-
-        return (isset($_COOKIE[$key])) ? $_COOKIE[$key] : $default;
-    }
-
-    /**
      * Retrieve a member of the $_SERVER superglobal
      *
      * If no $key is passed, returns the entire $_SERVER array.
@@ -416,17 +397,17 @@ class Request {
      * @param mixed $default Default value to use if key not found
      * @return mixed
      */
-    public function getParam($key, $default = null)
+    public function getParam($key=null, $default = null)
     {
-        $keyName = (null !== ($alias = $this->getAlias($key))) ? $alias : $key;
-
-        $paramSources = $this->getParamSources();
+        $keyName = $key;
         if (isset($this->_params[$keyName])) {
             return $this->_params[$keyName];
-        } elseif (in_array('_GET', $paramSources) && (isset($_GET[$keyName]))) {
+        } elseif (isset($_GET[$keyName])) {
             return $_GET[$keyName];
-        } elseif (in_array('_POST', $paramSources) && (isset($_POST[$keyName]))) {
+        } elseif (isset($_POST[$keyName])) {
             return $_POST[$keyName];
+        } else if (empty($key)) {
+            return $_REQUEST;
         }
 
         return $default;

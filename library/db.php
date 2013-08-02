@@ -125,6 +125,10 @@ class Db
     	Performance::monitor($sql,Performance::BEGIN);
         $this->db->setAttribute(PDO::ATTR_CASE, PDO::CASE_NATURAL);
         $rs = $this->db->query($sql);
+//        echo $sql;
+		if (empty($rs)){
+			return false;
+		}
         $rs->setFetchMode($this->fetch_mode);
         $data = $rs->fetchAll();
         Performance::monitor($sql,Performance::END);
@@ -165,6 +169,7 @@ class Db
     {
     	$this->separateReadWrite($sql,$flag);
     	Performance::monitor($sql,Performance::BEGIN);
+//    	echo $sql;
         $rs = $this->db->query($sql);
         $data = $rs->fetchColumn();
         Performance::monitor($sql,Performance::END);
@@ -181,7 +186,11 @@ class Db
     {
     	$this->separateReadWrite($sql,$flag);
     	Performance::monitor($sql,Performance::BEGIN);
+//    	echo $sql;
         $rs 	= $this->db->query($sql);
+        if (empty($rs)){
+        	return false ;
+        }
         $rs->setFetchMode($this->fetch_mode);
         $data 	= $rs->fetch();
         Performance::monitor($sql,Performance::END);
@@ -268,7 +277,8 @@ class Db
 		//加值
 		$sql.= "'".implode("','",array_values($data))."')";
 		
-		echo $sql;
+		
+//		die($sql);
 		//执行
 		return $this->exec($sql);
 	}
@@ -285,6 +295,7 @@ class Db
 		//生成sql
 		$sql="update `{$tName}` set " ;
 		
+//		print_r($data);
 		//加set
 		foreach ($data as $k=>$v) {
 			$sql.= "`$k`='".$v."'," ;
@@ -297,7 +308,7 @@ class Db
 		if(!empty($where)){
 			$sql.= ' where '.$where ;
 		}
-		echo $sql ;
+//		die($sql);
 		//执行
 		return $this->exec($sql);
 	}
@@ -322,13 +333,13 @@ class Db
 		}
 		//加orderBy
 		if(!empty($orderBy)){
-			$sql.= ' orderBy '.$orderBy ;
+			$sql.= ' order by '.$orderBy ;
 		}
 		//加where
 		if(!empty($limit)){
 			$sql.= ' limit '.$limit ;
 		}
-//		echo $sql ;
+//		echo($sql)  ;
 		//执行
 		return $this->query($sql) ;
 	}
