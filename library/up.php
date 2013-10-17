@@ -236,6 +236,9 @@ class Up {
 		$dirName = pathinfo($file, PATHINFO_DIRNAME) ;
 		$baseName= pathinfo($file, PATHINFO_BASENAME);
 		$ext     = pathinfo($file, PATHINFO_EXTENSION);
+		if (empty($dirName) || $dirName == '.'){
+			return '/'.str_replace(".".$ext,"", $baseName)."_thumb.".$ext ;
+		}
 		return $dirName.'/'.str_replace(".".$ext,"", $baseName)."_thumb.".$ext ;
 	}
 }

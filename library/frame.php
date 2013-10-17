@@ -141,14 +141,11 @@ class Frame
 		$method->invokeArgs($controller,array());
 		
 		//View Control
-		if ($controller->autoLayout){
+		if ($controller->useLayout){
 			$viewFile 					= $mappingArr['controller'].'/'.$mappingArr['method'];
 			$controller->layout->content= $controller->view->render($controller->autoview ? $viewFile:null,false);
-			
-			if (empty($controller->layout->file)){
-				$controller->layout->set_file($frame->config['layout']);
-			}
-			$controller->layout->render(null,true);
+			$layoutFile 				= $frame->config['layout'] ;
+			$controller->layout->render($controller->autoLayout? $layoutFile:null,true);
 		}else {
 			$viewFile 					= $mappingArr['controller'].'/'.$mappingArr['method'];
 			$controller->view->render($controller->autoview ? $viewFile:null,true);

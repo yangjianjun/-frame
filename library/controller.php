@@ -18,7 +18,8 @@ class Controller {
 	public 		$view		= null ;
 	public 		$autoview	= true ; //是否自动定位view文件,为true用默认的view (view/controller名/action名)
 	public 		$layout 	= null;
-	public 		$autoLayout	= null ; //是否自动定位layout文件,为true用默认的layout (view/controller名)
+	public 		$useLayout	= true ; //是否用layout文件
+	public 		$autoLayout	= true ; //是否自动定位layout文件,为true用默认的layout (view/controller名)
 	
 	public      $action     = null;
 	public      $controller = null;
@@ -26,22 +27,22 @@ class Controller {
 	public 		$isLogin 	=false;
 	public function __construct($request=null,$mappingArr=null){
 		if (empty($this->config)){
-			$this->config = Frame::getInstance()->config ;
+			$this->config 		= Frame::getInstance()->config ;
 		}
 		if (is_object($request)){
 			$this->request 		= $request ;
 		}
-		if (is_array($mappingArr)){
-			$this->controller 	= $mappingArr['controller'];
-			$this->action 		= $mappingArr['method'];
-		}
+	
 		$this->view				= View::instance();
-		$this->view->config 	= $this->config ;
+		$this->view->config 	= Frame::getInstance()->config ;
 		
-		$this->autoLayout 		= $this->config['autoLayout'] ;   
-		if ($this->autoLayout){
-			$this->layout			= View::instance();
-			$this->layout->config 	= $this->config ;
+		
+		$this->layout			= View::instance();
+		$this->layout->config 	= Frame::getInstance()->config ;
+		
+		if (is_array($mappingArr)){
+			$this->layout->action 		= $this->view->action		=$this->action 	   = $mappingArr['method'];
+			$this->layout->controller 	= $this->view->controller	=$this->controller = $mappingArr['controller'];
 		}
 		$this->init();
 	}	
@@ -62,14 +63,11 @@ class Controller {
 		if (empty($file)){
 			return false ;
 		}
-		if (!is_object($this->layout)){
-			$this->layout			= View::instance();
-			$this->layout->config 	= $this->config ;
-		}
+		$this->autoLayout = false ;
 		$this->layout->set_file($file);
 	}
 	public function disableLayout(){
-		$this->autoLayout = false ;
+		$this->useLayout = false ;
 	}
 	
 	public function setTitle($string=null){

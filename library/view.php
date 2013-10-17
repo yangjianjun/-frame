@@ -7,7 +7,7 @@ class View {
 	/**
 	 * 视图文件
 	 */
-	public $file = null;
+	private $file = '';
 	
 	public $baseUrl= null;
 	
@@ -55,9 +55,7 @@ class View {
 	 */
 	public function set_file($file)
 	{
-		if (!empty($file)){
-			$this->file = VIE_PATH.$file.EXT;
-		}
+		$this->file = VIE_PATH.$file.EXT;
 	}
 
 	/**

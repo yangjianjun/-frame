@@ -161,7 +161,7 @@ class Page {
 
      */
 
-    public function show() {
+    public function show($basePath="/") {
 
         if(0 == $this->totalRows) return '';
 
@@ -170,7 +170,7 @@ class Page {
         $nowCoolPage      = ceil($this->nowPage/$this->rollPage);
 
      
-        $url  =  $_SERVER['REQUEST_URI'].(strpos($_SERVER['REQUEST_URI'],'?')?'&':"?").$this->parameter;
+        $url  =  $basePath.(strpos($basePath,'?')?'&':"?").$this->parameter;
 
         $parse = parse_url($url);
 

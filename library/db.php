@@ -169,7 +169,6 @@ class Db
     {
     	$this->separateReadWrite($sql,$flag);
     	Performance::monitor($sql,Performance::BEGIN);
-//    	echo $sql;
         $rs = $this->db->query($sql);
         $data = $rs->fetchColumn();
         Performance::monitor($sql,Performance::END);
@@ -260,7 +259,14 @@ class Db
 		//执行
 		return $this->getOne($sql);
     }
-    
+    public function countsql($sql=null){
+    	//验证
+		if(empty($sql)){
+			return false ;
+		}
+		//执行
+		return $this->getOne($sql);
+    }
 	//封装insert
 	public function insert($tName=null,array $data=array()){
 		//sql = insert into 表名 (字段名1,字段名2..)  values (值1,值2..)

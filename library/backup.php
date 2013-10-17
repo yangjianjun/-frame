@@ -1,7 +1,17 @@
 <?php
 /******   备份数据库结构 ******/
-class Backup extends Model
+class Backup
 {
+	protected $link=null;
+	function __construct(){
+		$cfg = $_SESSION['config']['db']['0'] ;
+		
+		
+		$this->link = mysql_connect($cfg['host'],$cfg['user'],$cfg['password']);
+		mysql_select_db($cfg['dbname']);
+		mysql_query(" set names ".$cfg['charset'],$this->link);
+	}
+
 	/*
 	函数名称：table2sql()
 	函数功能：把表的结构转换成为SQL
@@ -12,10 +22,11 @@ class Backup extends Model
 	
 	function table2sql($table) 
 	{
-		$tabledump = "DROP TABLE IF EXISTS `$table`;\n";
-		$createtable = $this->db->getOneResult("SHOW CREATE TABLE `$table`");
-		
-		$tabledump .= $createtable['Create Table'].";\n\n";
+		$tabledump = "DROP TABLE IF EXISTS $table;\n";
+		$createtable = mysql_query("SHOW CREATE TABLE $table",$this->link);
+		$create = @mysql_fetch_row($createtable);
+		$tabledump .= $create[1].";\n\n"; 
+		return $tabledump;
 	}
 	
 	
@@ -29,23 +40,22 @@ class Backup extends Model
 	*/
 	function data2sql($table) 
 	{
-		$tabledump = "DROP TABLE IF EXISTS `$table`;\n";
-		$createtable = $this->db->getOneResult("SHOW CREATE TABLE `$table`");
+		$tabledump = "DROP TABLE IF EXISTS $table;\n";
+		$createtable = mysql_query("SHOW CREATE TABLE $table",$this->link);
 		
-		$tabledump .= $createtable['Create Table'].";\n\n";
+		$create = @mysql_fetch_row($createtable);
+		$tabledump .= $create[1].";\n\n";
 		
-		
-		$rows = $this->db->query("SELECT * FROM $table" );
-		if (empty($rows)){
-			return $tabledump ;
-		}
-		$numfields = count($rows[0]);
-		$numrows = count($rows);
-		foreach($rows as $k=>$row){
+		$rows = mysql_query("SELECT * FROM $table" ,$this->link);
+		$numfields = mysql_num_fields($rows);
+		$numrows = mysql_num_rows($rows);
+		while ($row = @mysql_fetch_row($rows))
+		{
 		   $comma = "";
 		   $tabledump .= "INSERT INTO $table VALUES(";
-		   foreach ($row as $kk=>$vv) {
-		   		$tabledump .= $comma."'".mysql_escape_string($vv)."'";
+		   for($i = 0; $i < $numfields; $i++) 
+		   {
+				$tabledump .= $comma."'".mysql_escape_string($row[$i])."'";
 				$comma = ",";
 		   }
 		   $tabledump .= ");\n";
@@ -53,45 +63,6 @@ class Backup extends Model
 		$tabledump .= "\n";
 		
 		return $tabledump;
-	}
-	
-	function restore($fname){
-		if (file_exists($fname)) {
-			
-			$sql_value="";
-			$cg=0;
-			$sb=0;
-			$sqls=file($fname);
-			
-			
-			foreach($sqls as $sql){
-		    	$sql_value.=$sql;
-		    }
-			$a=explode(";", $sql_value);  //根据";\r\n"条件对数据库中分条执行
-			$total=count($a)-1;
-		    for ($i=0;$i<$total;$i++){
-			    //执行命令
-			    $sql = $a[$i].";";
-			    if($this->db->exec($sql)){
-			    	$cg+=1;
-			    }else{
-			    	$sb+=1;
-			    	$sb_command[$sb]=$sql;
-		    	}
-		    }
-//		    $msg= "操作完毕，共处理 {$total}条命令,成功 {$cg}条，失败 {$sb}条";
-		    //显示错误信息 
-//		    if ($sb>0){
-//		    	$msg.= "<hr><br><br>失败命令如下：<br>";
-//		    	for ($ii=1;$ii<=$sb;$ii++){
-//		     		$msg.= "<p><b>第 ".$ii." 条命令（内容如下）：</b><br>".$sb_command[$ii]."</p><br>";
-//		    	}
-//		    }
-		    $msg="操作完毕，共处理 {$total}条命令";   
-		}else{
-	   		$msg=  "MySQL备份文件不存在，请检查文件路径是否正确！";
-		}
-		Common::formRequest("/admin/db",array("msg"=>base64_encode($msg)));
 	}
 }
 			

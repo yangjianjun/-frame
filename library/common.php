@@ -196,38 +196,47 @@ class Common{
     	return $config;
     }
     
-    /**
-	 * 重定向
-	 *
-	 * @param  mixed   string site URI or URL to redirect to, or array of strings if method is 300
-	 * @param  string  HTTP method of redirect
+	/**
+	 * URL重定向
+	 * @param string $url 重定向的URL地址
+	 * @param integer $time 重定向的等待时间（秒）
+	 * @param string $msg 重定向前的提示信息
 	 * @return void
 	 */
-	public static function redirect($uri = '', $method = '302')
-	{
-		$codes = array
-		(
-			'refresh' => 'Refresh',
-			'301' => 'Moved Permanently',
-			'302' => 'Found',
-			'303' => 'See Other',
-			'304' => 'Not Modified',
-			'305' => 'Use Proxy',
-			'307' => 'Temporary Redirect'
-		);
-		// Validate the method and default to 302
-		$method = isset($codes[$method]) ? (string) $method : '302';
-
-		if (strpos($uri, '://') === FALSE){
-//			$uri = input::uri('base').$uri;
+	public static function redirect($url,$param=array() ,$time=0, $msg='') {
+	    if (empty($url)){
+	    	return false ;
+	    }
+		if (!empty($param)){
+			$url.="?";
+			
+			foreach ($param as $k=>$v) {
+				$url.=$k.'='.$v.'&';
+			}
+			$url[strlen($url)-1]=" ";
 		}
-		if ($method === 'refresh'){
-			header('Refresh: 0; url='.$uri);
-		} else{
-			header('HTTP/1.1 '.$method.' '.$codes[$method]);
-			header('Location: '.$uri);
-		}
-		exit('<h1>'.$method.' - '.$codes[$method].'</h1>');
+	    
+		
+		
+		//多行URL地址支持
+	    $url        = str_replace(array("\n", "\r"), '', $url);
+	    if (empty($msg))
+	        $msg    = "系统将在{$time}秒之后自动跳转到{$url}！";
+	    if (!headers_sent()) {
+	        // redirect
+	        if (0 === $time) {
+	            header('Location: ' . $url);
+	        } else {
+	            header("refresh:{$time};url={$url}");
+	            echo($msg);
+	        }
+	        exit();
+	    } else {
+	        $str    = "<meta http-equiv='Refresh' content='{$time};URL={$url}'>";
+	        if ($time != 0)
+	            $str .= $msg;
+	        exit($str);
+	    }
 	}
     
 	/**
@@ -262,6 +271,11 @@ class Common{
 		curl_close( $ch );
         return $contents;
     }
+    public static $filterArray = array(
+    	'alert',
+    	'javascript',
+    	'expression',
+    );
 	//input data secure Filter
 	public static function secureFilter($data=null){
 		if (empty($data)){
@@ -272,10 +286,28 @@ class Common{
 		 || !get_magic_quotes_gpc()){
 			if (is_array($data)){
 				foreach ($data as $k=>$v) {
+					foreach (self::$filterArray as $vv) {
+						$data[$k] =str_replace($vv,"", $data[$k]);
+					}
 					$data[$k] = addslashes($data[$k]);
 				}
 			}else {
+				foreach (self::$filterArray as $vv) {
+					$data =str_replace($vv,"", $data);
+				}
 				$data = addslashes($data);
+			}
+		}else {
+			if (is_array($data)){
+				foreach ($data as $k=>$v) {
+					foreach (self::$filterArray as $vv) {
+						$data[$k] =str_replace($vv,"", $data[$k]);
+					}
+				}
+			}else {
+				foreach (self::$filterArray as $vv) {
+					$data =str_replace($vv,"", $data);
+				}
 			}
 		}
 		return $data;
@@ -302,21 +334,24 @@ class Common{
 	}  
 	
 	//生成下拉框
-	public static function getSelect($name=null,$data=array(),$id=""){
+	public static function getSelect($name=null,$data=array(),$param=array()){
 		//验证
 		if (empty($data) || empty($name)){
 			return ;
 		}
 		//生成select 下拉框
 		$selectedstr=NULL;
-		$select = '<select name="'.$name.'" style="width:150px" ><option value="" >请选择</option>';
+		$emptyStr = isset($param['msg'])?$param['msg']:'请选择';
+		$classStr = isset($param['class'])? 'class="'.$param['class'].'"':'';
+		$styleStr = isset($param['style'])? 'style="'.$param['style'].'"':'';
+		$select = '<select name="'.$name.'" '.$classStr.' '.$styleStr.' ><option value="" >'.$emptyStr.'</option>';
 	    
 		foreach ($data as $k=>$o) {
 			if (is_array($o)){
-				$selectedstr = ($o["id"] == $id)?'selected':'' ;
+				$selectedstr = ($o["id"] == $param['id'])?'selected':'' ;
 				$select.="<option $selectedstr value='".$o['id']."' >".$o['name']."</option>";
 			}else {
-				$selectedstr = ( $id !== "" && $k == $id  )?'selected':'' ;
+				$selectedstr = ( $param['id'] !== "" && $k == $param['id']  )?'selected':'' ;
 				$select.="<option $selectedstr value='".$k."' >".$o."</option>";
 			}
 		}
@@ -334,7 +369,56 @@ class Common{
 	}
 	
 	
+    static function buildImageVerify($length=4,$mode=1,$type='png',$width=48,$height=22,$verifyName='verify')
+    {
+	
+        $randval = String::randString($length,$mode);
+        $_SESSION[$verifyName]= $randval;
+        $width = ($length*10+10)>$width?$length*10+10:$width;
+        if ( $type!='gif' && function_exists('imagecreatetruecolor')) {
+            $im = @imagecreatetruecolor($width,$height);
+        }else {
+            $im = @imagecreate($width,$height);
+        }
+        $r = Array(225,255,255,223);
+        $g = Array(225,236,237,255);
+        $b = Array(225,236,166,125);
+        $key = mt_rand(0,3);
 
+        $backColor = imagecolorallocate($im, 220,220,220);    //背景色（随机）
+		$borderColor = imagecolorallocate($im, 192, 192, 192);                    //边框色
+        $pointColor = imagecolorallocate($im,mt_rand(0,255),mt_rand(0,255),mt_rand(0,255));                 //点颜色
+
+        @imagefilledrectangle($im, 0, 0, $width - 1, $height - 1, $backColor);
+        @imagerectangle($im, 0, 0, $width-1, $height-1, $borderColor);
+        $stringColor = imagecolorallocate($im,mt_rand(0,200),mt_rand(0,120),mt_rand(0,120));
+		// 干扰
+//		for($i=0;$i<10;$i++){
+//			$fontcolor=imagecolorallocate($im,mt_rand(0,255),mt_rand(0,255),mt_rand(0,255));
+//			imagearc($im,mt_rand(-10,$width),mt_rand(-10,$height),mt_rand(30,300),mt_rand(20,200),55,44,$fontcolor);
+//		}
+//		for($i=0;$i<25;$i++){
+//			$fontcolor=imagecolorallocate($im,mt_rand(0,255),mt_rand(0,255),mt_rand(0,255));
+//			imagesetpixel($im,mt_rand(0,$width),mt_rand(0,$height),$pointColor);
+//		}
+		for($i=0;$i<$length;$i++) {
+			imagestring($im,5,$i*12+5,mt_rand(5,6),$randval{$i}, $stringColor);
+		}
+//        @imagestring($im, 5, 5, 3, $randval, $stringColor);
+        self::output($im,$type);
+    }
+    
+    static function output($im,$type='png',$filename='')
+    {
+        header("Content-type: image/".$type);
+        $ImageFun='image'.$type;
+		if(empty($filename)) {
+	        $ImageFun($im);
+		}else{
+	        $ImageFun($im,$filename,100);
+		}
+        imagedestroy($im);
+    }
 
 
 }
