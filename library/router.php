@@ -86,9 +86,31 @@ class Router
 	public function rewriteUrl($pathInfo){
 		$rewriteUrlArr = include_once APP_PATH.'config/rewrite.php';
 		foreach ($rewriteUrlArr as $item) {
-			if (preg_match("#".$item['regex']."#i", $pathInfo)) {
-				$mappingArr['controller'] 	= $item['c'];
-				$mappingArr['method']		= $item['a'];
+			if (preg_match("#\.html$#i", $pathInfo)) {
+				if (preg_match("#_#i", $pathInfo)){
+					$urlArr = explode("_", $pathInfo);
+					$mappingArr['controller'] 	= substr($urlArr[0], 1);
+					//是三个参数
+					if (!preg_match("#\.#i", $urlArr[1])){
+						//echo "是三个参数";
+						$mappingArr['method']		= $urlArr[1];
+						if (isset($urlArr[2])){
+							preg_match("#\d+#i", $urlArr[2],$param);
+							if (isset($param[0])){
+								$_GET['id']= $_POST['id']  = $param[0];
+							}
+						}
+					}else {
+						//二个参数
+						$new = explode(".", $urlArr[1]);
+						$mappingArr['method']		= $new[0];
+					}
+				}else{
+					//一个参数
+					$urlArr = explode(".", $pathInfo);
+					$mappingArr['controller'] 	= substr($urlArr[0], 1);
+					$mappingArr['method']		= "index";
+				}
 				return $mappingArr ;
 			}
 		}
