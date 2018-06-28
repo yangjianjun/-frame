@@ -1,6 +1,5 @@
 <?php
 /*
- * Unified import documents
  *
  *
  * File Extension
@@ -32,32 +31,18 @@ defined('ROOT') or define('ROOT', dirname(__FILE__).DIRECTORY_SEPARATOR);
  * css  			css path (public/css)
  * images			images path(public/images)
  * upload			Website where the uploaded file path
-
- 
  */
 
 defined('APP_PATH')  or define('APP_PATH',  ROOT.'app'.  		    DIRECTORY_SEPARATOR);
 defined('CON_PATH')  or define('CON_PATH',  APP_PATH.'controller'.	DIRECTORY_SEPARATOR);
 defined('MOD_PATH')  or define('MOD_PATH',  APP_PATH.'model'.		DIRECTORY_SEPARATOR);
 defined('VIE_PATH')  or define('VIE_PATH',  APP_PATH.'view'.		DIRECTORY_SEPARATOR);
-
-
 defined('LIB_PATH')  or define('LIB_PATH',  ROOT.'library'.			DIRECTORY_SEPARATOR);
-
-
 defined('BAC_PATH')  or define('BAC_PATH',	ROOT.'backend'.			DIRECTORY_SEPARATOR);
 defined('LOG_PATH')  or define('LOG_PATH',	BAC_PATH.'logs'.		DIRECTORY_SEPARATOR);
 defined('CAC_PATH')  or define('CAC_PATH',	BAC_PATH.'cache'.		DIRECTORY_SEPARATOR);
-
-
-
 defined('PUB_PATH')  or define('PUB_PATH',	ROOT.'public'.			DIRECTORY_SEPARATOR);
-
 defined('UPL_PATH')  or define('UPL_PATH',	ROOT.'upload'.			DIRECTORY_SEPARATOR);
-
-
-
-
 
 /*
  * Loading boot class files
